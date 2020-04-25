@@ -1,1 +1,8 @@
-<p>clientes works!</p>
+<div class="container">
+    <div *ngFor="let clienteEnLaLista of clientes">
+        <p> Nombre: {{clienteEnLaLista.nombre}} </p>
+        <p> Edad: {{clienteEnLaLista.edad}} </p>
+    </div>
+    <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+    <button class="btn btn-danger" (click)="leer()">Leer </button>  
+</div>
