@@ -1,8 +1,19 @@
+<div class="btn-group">
+    <button class="btn btn-primary" (click)="guardarProductos()">Guardar Productos</button>
+    <button class="btn btn-primary" (click)="guardarClientes()">Guardar Clientes</button>
+    <button class="btn btn-primary" (click)="leer()">Leer </button> 
+    <button class="btn btn-danger" (click)="eliminarProductos()">Eliminar Productos </button> 
+    <button class="btn btn-danger" (click)="eliminarClientes()">Eliminar Clientes</button>
+    <button class="btn btn-danger" (click)="eliminarTodo()">Eliminar todo </button> 
+</div>
+
 <div class="container">
-    <div *ngFor="let clienteEnLaLista of clientes">
+    <div class="clientesContainer" *ngFor="let clienteEnLaLista of clientes">
         <p> Nombre: {{clienteEnLaLista.nombre}} </p>
         <p> Edad: {{clienteEnLaLista.edad}} </p>
     </div>
-    <button class="btn btn-primary" (click)="guardar()">Guardar</button>
-    <button class="btn btn-danger" (click)="leer()">Leer </button>  
+    <div class="productosContainer" *ngFor="let productoEnLaLista of productos">
+        <p> Nombre: {{productoEnLaLista.nombre}} </p>
+        <p> Edad: {{productoEnLaLista.precio | currency: 'COP'}} </p>
+    </div>
 </div>
