@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonPipe, PercentPipe } from '@angular/common';
 interface Clientes{
   nombre:string,
   apellido:string,
@@ -15,54 +16,45 @@ interface Productos{
 })
 export class ClientesComponent implements OnInit {
 
-  clientes:Array<Clientes> = new Array<Clientes>()
-  productos:Array<Productos> = new Array<Productos>()
   constructor() { }
 
   ngOnInit(): void {
-  /*  this.clientes.push(
-       {
-        nombre:"Maia",
-        apellido:"Gómez Olaguibel",
-        edad:2
-      },
-      {
-        nombre:"Karen",
-        apellido:"Olaguibel Rossi",
-        edad:29
-      },
-      {
-        nombre:"Jhonny",
-        apellido:"Gómez Morales",
-        edad:30
-      })
-       
-    this.productos.push(
-      {
-        nombre:"Arroz",
-        precio:2000
-      },
-      {
-        nombre:"Maiz",
-        precio:2100
-      },
-      {
-        nombre:"pan",
-        precio:300
-      }) */
   }
 
   guardarClientes(){
-    localStorage.setItem("clientes", JSON.stringify(this.clientes))
+    let clientesAgregar: Array<Clientes> = new Array();
+    clientesAgregar.push(
+    {
+      nombre: "Maia",
+      apellido: "Gómez",
+      edad: 3
+    },
+    {
+      nombre: "Karen",
+      apellido: "Olaguibel",
+      edad: 29
+    }
+    )
+    localStorage.setItem("clientes", JSON.stringify(clientesAgregar))
   }
 
   guardarProductos(){
-    localStorage.setItem("productos", JSON.stringify(this.productos))
-  }
-
-  leer(){
-    this.clientes = JSON.parse(localStorage.getItem("clientes"))
-    this.productos = JSON.parse(localStorage.getItem("productos"))
+    let productosAgregar:Array<Productos> = new Array<Productos>();
+    productosAgregar.push(
+      {
+        nombre:"Arroz",
+        precio: 2100
+      },
+      {
+        nombre:"Cebolla",
+        precio: 450
+      },
+      {
+        nombre:"lentejas",
+        precio: 320
+      }
+    )
+    localStorage.setItem("productos", JSON.stringify(productosAgregar))
   }
 
   eliminarClientes(){
@@ -77,4 +69,22 @@ export class ClientesComponent implements OnInit {
     localStorage.clear()
   }
 
+  get clientesLocales(): Clientes[] {
+    console.log("Cliente")
+    let clientesLocalStorage: Clientes[] = JSON.parse(localStorage.getItem("clientes"))
+    if (clientesLocalStorage == null)
+    {
+      return new Array<Clientes>()
+    }
+    return clientesLocalStorage
+  }
+
+  get productosLocales(): Productos[]{
+    console.log("productos")
+    let productosLocalesStorage: Productos[] =  JSON.parse(localStorage.getItem("productos"))
+    if (productosLocalesStorage == null){
+      return new Array<Productos>()
+    }
+    return productosLocalesStorage
+  }
 }
