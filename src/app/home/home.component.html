@@ -1,17 +1,17 @@
 <div class="container mt-5" >
     <form action="" class="form-group">
-        <input class="form-control" placeholder="Busque un cliente" type="text">
+        <input class="form-control" placeholder="Busque un cliente" type="text" (input)="buscarCliente($event.target.value)">
     </form>
     <button class="btn btn-primary" routerLink="/agrega-clientes">Agregar Cliente Nuevo</button>
     <div class="row">
-        <div class="col-sm-3 mt-4">
+        <div class="col-sm-3 mt-4" *ngFor="let cliente of clienteArray">
             <div class="card">
                 <div class="card-body">
-                <h5 class="card-title">Jhonny Gomez</h5>
-                <h6 class="card-subtitle mb-2 text-muted">1234</h6>
-                <p class="card-text">Los cerezos, calle 21 Colina Campestre, Bogotá</p>
-                <a href="#" class="card-link">Agregar</a>
-                <a href="#" class="card-link">Informacion</a>
+                    <h5 class="card-title">{{cliente.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{cliente.clienteID}}</h6>
+                    <p class="card-text">{{cliente.direccion}}</p>
+                    <a href="#" class="card-link">Agregar</a>
+                    <a href="#" class="card-link">Informacion</a>
                 </div>
             </div>
         </div>    
