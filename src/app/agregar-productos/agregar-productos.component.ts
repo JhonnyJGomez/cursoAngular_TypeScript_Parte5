@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Productos } from '../models/productos';
+import { ProductosService } from '../services/productos.service';
+import { ProductosComponent } from '../productos/productos.component';
 
 @Component({
   selector: 'app-agregar-productos',
@@ -9,7 +12,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AgregarProductosComponent implements OnInit {
   formularioAgregar:FormGroup; 
   
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, public productosServicioInyectado: ProductosService) { }
 
   ngOnInit(): void {
 
@@ -22,6 +25,7 @@ export class AgregarProductosComponent implements OnInit {
 
 
   agregarProducto(){
-
+    this.productosServicioInyectado.agregarLocalStorage(this.formularioAgregar.value)
+    this.formularioAgregar.reset
   }
 }

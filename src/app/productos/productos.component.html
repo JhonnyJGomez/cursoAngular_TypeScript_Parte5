@@ -4,12 +4,12 @@
     </form>
     <button class="btn btn-primary" routerLink="/agregar-productos">Agregar Producto Nuevo</button>
     <div class="row">
-        <div class="col-sm-3 mt-4" >
+        <div class="col-sm-3 mt-4" *ngFor="let productoEnLaLista of productos" >
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Nombre Producto</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Codigo</h6>
-                    <p class="card-text">Descripción</p>
+                    <h5 class="card-title">{{productoEnLaLista.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{productoEnLaLista.ProductoID}}</h6>
+                    <p class="card-text">{{productoEnLaLista.precio | currency:'COP'}}</p>
                     <a href="#" class="card-link">Agregar</a>
                     <a href="#" class="card-link">Eliminar</a>
                 </div>

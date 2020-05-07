@@ -12,6 +12,7 @@ import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.co
 import { ReactiveFormsModule, FormsModule} from '@angular/forms'
 import { ClientesService } from './services/clientes.service';
 import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
+import { ProductosService } from './services/productos.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AgregarProductosComponent } from './agregar-productos/agregar-productos
     FormsModule
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    ProductosService
   ],
   bootstrap: [AppComponent]
 })
