@@ -1,6 +1,6 @@
 <div class="container mt-5" >
     <form action="" class="form-group">
-        <input class="form-control" placeholder="Busque un producto por su nombre..." type="text">
+        <input class="form-control" (input)="buscarProductos($event.target.value)" placeholder="Busque un producto por su nombre..." type="text">
     </form>
     <button class="btn btn-primary" routerLink="/agregar-productos">Agregar Producto Nuevo</button>
     <div class="row">

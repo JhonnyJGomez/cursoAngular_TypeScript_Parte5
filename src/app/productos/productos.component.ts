@@ -16,4 +16,11 @@ export class ProductosComponent implements OnInit {
     this.productos = this.productosServicioInyectado.productosLocalStorage
   }
 
+  buscarProductos(nombreProducto){
+    //Teno el obejot = Usando el servio de productos. Uso la variable local que trae lo del get y filtro todos los productos 
+    // y lo de vuelvo a todos aquellos productos.nombre en minuscula incluya el nombre a buscar tambien en minuscular
+    this.productos =  this.productosServicioInyectado.productosLocalStorage.filter(productos=>{
+      return productos.nombre.toLocaleLowerCase().includes(nombreProducto.toLocaleLowerCase());
+    })
+  }  
 }
