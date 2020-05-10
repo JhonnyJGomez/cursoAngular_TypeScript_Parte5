@@ -10,7 +10,7 @@
                     <h5 class="card-title">{{cliente.nombre}} {{cliente.apellidos}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{cliente.clienteID}}</h6>
                     <p class="card-text">{{cliente.direccion}}</p>
-                    <a href="#" class="card-link">Agregar</a>
+                    <a (click)="(irAProductos(cliente))" class="card-link">Agregar</a>
                     <a href="#" class="card-link">Eliminar</a>
                 </div>
             </div>

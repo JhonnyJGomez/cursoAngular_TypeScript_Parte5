@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../services/productos.service';
 import { Productos } from '../models/productos';
+import { PedidosService } from '../services/pedidos.service';
 
 @Component({
   selector: 'app-productos',
@@ -9,11 +10,12 @@ import { Productos } from '../models/productos';
 })
 export class ProductosComponent implements OnInit {
   productos:Array<Productos> = new Array<Productos>();
-  constructor(public productosServicioInyectado:ProductosService) { }
+  constructor(public productosServicioInyectado:ProductosService, public PedidoServiceInyectado:PedidosService) { }
 
   ngOnInit(): void {
 
     this.productos = this.productosServicioInyectado.productosLocalStorage
+    console.log(this.PedidoServiceInyectado.pedido)
   }
 
   buscarProductos(nombreProducto){
