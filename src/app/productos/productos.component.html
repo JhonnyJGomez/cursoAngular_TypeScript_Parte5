@@ -10,7 +10,7 @@
                     <h5 class="card-title">{{productoEnLaLista.nombre}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{productoEnLaLista.ProductoID}}</h6>
                     <p class="card-text">{{productoEnLaLista.precio | currency:'COP'}}</p>
-                    <a href="#" class="card-link">Agregar</a>
+                    <a (click)="agregar(productoEnLaLista)" class="card-link">Agregar</a>
                     <a href="#" class="card-link">Eliminar</a>
                 </div>
             </div>

@@ -11,7 +11,7 @@ export class EncabezadoComponent implements OnInit {
   constructor(public pedidoServicioInyectado:PedidosService) { }
 
   ngOnInit(): void {
-    console.log(this.pedidoServicioInyectado.pedido.clienteID)
+    
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../services/productos.service';
 import { Productos } from '../models/productos';
 import { PedidosService } from '../services/pedidos.service';
+import { PedidoDetalle } from '../models/pedido-detalle';
 
 @Component({
   selector: 'app-productos',
@@ -24,5 +25,12 @@ export class ProductosComponent implements OnInit {
     this.productos =  this.productosServicioInyectado.productosLocalStorage.filter(productos=>{
       return productos.nombre.toLocaleLowerCase().includes(nombreProducto.toLocaleLowerCase());
     })
-  }  
+  } 
+  
+  agregar(producto:Productos){
+    this.PedidoServiceInyectado.pedido.agregarProducto(producto)
+    console.log(this.PedidoServiceInyectado.pedido)
+  
+  }
+
 }
