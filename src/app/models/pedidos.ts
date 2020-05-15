@@ -34,8 +34,21 @@ export class Pedidos{
         }else{
             this.pedidoDetalle.push(pedidoDetalle)
         }
-
-
+        this.actualizarTotal()
         
+    }
+
+    private actualizarTotal(){
+        this.total = 0; 
+       /* Ejemplo usando for 
+        for (let producto of this.pedidoDetalle)
+        {
+            this.total = this.total + producto.total;
+        } */
+        //Ejemplo usando for each para recorrer el array
+
+        this.pedidoDetalle.forEach(producto=>{
+            this.total = this.total + producto.total
+        })
     }
 }

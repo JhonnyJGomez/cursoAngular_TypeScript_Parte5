@@ -1,1 +1,30 @@
-<p>pedidos works!</p>
+<div class="container">
+    <div class="cliente">
+        <h5>Cliente {{this.PedidoServiceInyectado.pedido.nombreCliente}}</h5>
+        <h6>Total {{this.PedidoServiceInyectado.pedido.total | currency: 'COP'}}</h6>
+        <div class="detalle">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Producto Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pedido of this.PedidoServiceInyectado.pedido.pedidoDetalle">
+                    <th scope="row" >1</th>
+                    <td>{{pedido.productoId}}</td>
+                    <td>{{pedido.nombreProducto}}</td>
+                    <td>{{pedido.cantidad}}</td>                    
+                    <td>{{pedido.precio | currency: 'COP'}}</td>
+                    <td>{{pedido.total | currency: 'COP'}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>
