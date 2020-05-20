@@ -1,5 +1,45 @@
 # Pedidos
 
+Este proyecto corresponde a la parte 5 del curso de Angular y veremos LocalStorage, aplicando todo lo aprendido hasta ahora.
+Tendremos los siguientes puntos dentro proyecto: 
+
+- Generar el proyecto Pedidos 
+
+- SetItem, GetItem
+
+- RemoveItem
+
+- Funciones Tipo GET
+
+- Maquetar Proyecto
+
+- Agregar Clientes
+
+- Buscador de clientes
+
+- Productos
+
+- Agregar Productos
+
+- Generar Clase Pedido
+
+- Seleccionar Cliente del Pedido
+
+- Seleccionar Productos del Pedido
+
+- Productos Detalle del Pedido
+
+- Último Pedido
+
+- Actualizar Cantidades del Detalle
+
+- Guardar Pedido Final en LocalStorage
+
+- Listado de Pedidos Hechos
+
+- Últimos detalles
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
